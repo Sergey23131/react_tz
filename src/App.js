@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {Users} from "./components/Users/Users";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+//import {} from "./components/CreateUserForm/CreateUser";
+import {UpdateUserForm} from "./components/UpdateUserForm/UpdateUser";
+import {CreateUserForm} from "./components/CreateUserForm/CreateUser";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App() {
+    return (
+        <Router>
+            <div className='App'>
+                <div className='main-box'>
+                    <Link to='/create'>
+                        <button className='button-create'>Create</button>
+                    </Link>
+                    <div className={'menu'}>
+                        <div className='main-info'>
+                            <Users/>
+                        </div>
+                        <div className='form'>
+                              <Switch>
+                            <Route path='/create'><CreateUserForm/></Route>
+                            <Route path='/update' component={UpdateUserForm}/>
+                        </Switch>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Router>
+    );
 }
-
-export default App;

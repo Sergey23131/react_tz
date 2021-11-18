@@ -1,0 +1,26 @@
+.user {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #e5e8ef;
+    font-size: 15px;
+
+}
+.user-roles{
+text-align: center;
+}
+
+.user:hover {
+    background-color: #abb2c4;
+}
+
+.user div {
+    width: 180px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
